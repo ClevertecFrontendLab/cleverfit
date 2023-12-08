@@ -1,38 +1,69 @@
 # CleverFIT
 
-Первым делом необходимо **установить Node Version Manager (NVM)**, если он у вас еще не установлен, на вашу машину. Если он уже есть, пропускайте данный шаг.
+## Установка Node.js, npm, nvm, Yarn
 
-**Для установки NVM** на **Windows** переходите по этой **[ссылке](https://github.com/coreybutler/nvm-windows/releases)**. Установите .exe-файл последней версии.
+Эта инструкция предоставляет пошаговое руководство по установке Node.js, npm, nvm (Node Version Manager) и Yarn на вашем компьютере.
 
-![Alt text](/public/nvm.png)
+#### 1. Установка Node.js с помощью nvm (Node Version Manager)
 
-Откройте терминал и убедитесь, что установка прошла успешно.
+-----
 
-`nvm -v`
+**Windows:**
 
-**Для установки NVM** на **Linux и Mac** откройте терминал.
+Скачайте и установите [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
-`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh`
+Откройте терминал (например, Command Prompt или PowerShell) и выполните команду:
+`nvm install latest`
 
-`export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
+-----
 
-`source ~/.bashrc`
+**macOS:**
 
-Убедитесь, что установка прошла успешно.
+Установите nvm через Homebrew:
+`brew install nvm`
 
-`nvm -v`
+Добавьте следующую строку в ваш файл ~/.bashrc, ~/.bash_profile или ~/.zshrc:
+`export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
 
-|Установка и запуска проекта  |
-|-----------------------------|
-|nvm install 20.10.0          |
-|nvm use 20.10.0              |
-|yarn install                 |
-|yarn start                   |
+Используйте ~/.bash_profile или ~/.zshrc, если у вас есть Zsh.
 
-|Основные команды  |Описание                               |
-|------------------|---------------------------------------|
-|yarn start        |`Запуск проекта`                       |
-|yarn build        |`Сборка проекта`                       |
-|yarn lint         |`Запуск eslint для ts(x)/js(x) файлов` |
-|yarn test         |`Запуск unit тестов vitest`                 |
-|yarn cy:e2e       |`Запуск e2e тестов cypress`            |
+В новом терминале выполните:
+`nvm install node`
+
+-----
+
+#### 2. Установка Yarn
+
+Установка через npm (пакетный менеджер Node.js)
+`npm install -g yarn`
+
+|Проверьте версии установленных компонентов |Описание                               |
+|-------------------------------------------|---------------------------------------|
+|`node -v`                                  |`Выведет установленную версию Node.js` |
+|`npm -v`                                   |`Выведет установленную версию npm`     |
+|`nvm -v`                                   |`Выведет установленную версию nvm`     |
+|`yarn -v`                                  |`Выведет установленную версию Yarn`    |
+
+-----
+
+#### 3. Установка и запуска проекта
+
+|Установка и запуска проекта |Описание                                                                        |
+|----------------------------|--------------------------------------------------------------------------------|
+|`nvm install 20.10.0`       |`Установить версию Node.js 20.10.0 с использованием Node Version Manager (nvm)` |
+|`nvm use 20.10.0`           |`Активировать установленную версию Node.js 20.10.0`                             |
+|`yarn install`              |`Установить зависимости проекта с помощью Yarn`                                 |
+|`yarn start`                |`Запустить проект`                                                              |
+
+-----
+
+|Основные команды    |Описание                               |
+|--------------------|---------------------------------------|
+|`yarn start`        |`Запуск проекта`                       |
+|`yarn build`        |`Сборка проекта`                       |
+|`yarn lint:css`     |`Запуск stylelint для css файлов`      |
+|`yarn lint:scripts` |`Запуск eslint для ts(x)/js(x) файлов` |
+|`yarn lint`         |`Запуск stylelint и eslint`            |
+|`yarn cy:e2e`       |`Запуск e2e тестов cypress`            |
+
+-----
