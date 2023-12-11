@@ -18,6 +18,7 @@ test-results.xml
 junit.xml
 .vscode/
 cypress/screenshots/
+cypress/report/
 tsconfig.tsbuildinfo
 .nyc_output/
 __diff_output__
