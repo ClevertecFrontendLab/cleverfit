@@ -23,11 +23,14 @@ jobs:
           repo: ${{ github.event.repository.name }}
           pull_number: ${{ github.event.number }}
           token: ${{ secrets.ADMIN_TOKEN }}
-      - name: Run autotest with cypress
-        uses: cypress-io/github-action@v5
+      - uses: actions/setup-node@v4
         with:
-          install: npm install
-          start: npm start
+          node-version: 20
+      - name: Run autotest with cypress
+        uses: cypress-io/github-action@v6
+        with:
+          install: yarn install
+          start: yarn start
           wait-on: 'http://localhost:3000'
       - name: Check tests
         if: always()
