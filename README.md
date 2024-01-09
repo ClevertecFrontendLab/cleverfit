@@ -1,5 +1,7 @@
 # CleverFIT
 
+## Инструкция для спринта №1 https://docs.google.com/document/d/14v92-ZOTfr2T-OFEifcDRWfJBPf_CL3KfV-rFbUNRqQ/edit?usp=sharing
+
 ## Установка Node.js, npm, nvm, Yarn
 
 Эта инструкция предоставляет пошаговое руководство по установке Node.js, npm, nvm (Node Version Manager) и Yarn на вашем компьютере.
